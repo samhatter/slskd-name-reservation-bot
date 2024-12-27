@@ -1,7 +1,5 @@
 #!/bin/bash
 
-INTERVAL=$((60 * 60 * 12))
-
 LINE_NUMBER=0
 
 while true; do
