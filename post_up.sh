@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INTERVAL=3600
+INTERVAL=$((60 * 60 * 12))
 
 LINE_NUMBER=0
 
