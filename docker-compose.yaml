@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  slskd-name-reservation-bot:
+    build: .
+    container_name: slskd-name-reservation-bot
+    env_file:
+      - .env
+    restart: always
+
