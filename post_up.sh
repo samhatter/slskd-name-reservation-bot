@@ -9,6 +9,8 @@ while true; do
         echo "Logging into $SLSKD_SLSK_USERNAME"
         cd /slskd
         ./slskd & slskd_pid=$!
+        sleep 60
+        kill $slskd_pid
         sleep $INTERVAL
         LINE_NUMBER=$((LINE_NUMBER + 1))
     else
