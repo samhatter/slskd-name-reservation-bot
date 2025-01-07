@@ -8,6 +8,6 @@ services:
       - .env
     cap_add:
       - NET_ADMIN
+    volumes:
+      - ./usernames.txt:usernames.txt
     restart: always
-    
-
