@@ -2,12 +2,12 @@ version: "3.8"
 
 services:
   slskd-name-reservation-bot:
-    build: .
+    build: ./src
     container_name: slskd-name-reservation-bot
     env_file:
       - .env
     cap_add:
       - NET_ADMIN
     volumes:
-      - ./usernames.txt:/usernames.txt
+      - ./usernames.txt:/scripts/usernames.txt
     restart: always
