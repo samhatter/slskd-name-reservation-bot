@@ -3,7 +3,7 @@
 LINE_NUMBER=1
 
 while true; do
-    SLSKD_SLSK_USERNAME=$(sed "${LINE_NUMBER}q;d" "/scripts/usernames.txt")
+    SLSKD_SLSK_USERNAME=$(sed "${LINE_NUMBER}q;d" "/app/usernames.txt")
     if [ -n "$SLSKD_SLSK_USERNAME" ]; then
         export SLSKD_SLSK_USERNAME="$SLSKD_SLSK_USERNAME"
         echo "Logging into $SLSKD_SLSK_USERNAME"
@@ -17,5 +17,4 @@ while true; do
         echo "Reached end of file, restarting."
         LINE_NUMBER=1
     fi
-    sleep $INTERVAL
 done

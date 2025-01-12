@@ -1,13 +1,22 @@
 version: "3.8"
 
 services:
+  slskd-name-reservation-bot-gluetun:
+    image: qmcgaw/gluetun:latest
+    container_name: slskd-name-reservation-bot-gluetun
+    network_mode: bridge
+    cap_add:
+      - NET_ADMIN
+    env_file:
+      .env
   slskd-name-reservation-bot:
     build: ./src
     container_name: slskd-name-reservation-bot
+    network_mode: container:slskd-name-reservation-bot-gluetun
     env_file:
       - .env
     cap_add:
       - NET_ADMIN
     volumes:
-      - ./usernames.txt:/scripts/usernames.txt
+      - ./usernames.txt:/app/usernames.txt
     restart: always
